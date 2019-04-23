@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitorchestrator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: gitorchestrator
+  template:
+    metadata:
+      labels:
+        name: gitorchestrator
+    spec:
+      serviceAccountName: gitorchestrator
+      containers:
+        - name: gitorchestrator
+          image: quay.io/wiardvanrij/gitorchestrator
+          command:
+          - gitorchestrator
+          imagePullPolicy: Always
+          env:
+            - name: SECRET_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: token
+                  key: token
+            - name: END_POINT
+              value: "https://gitlab.com/api/v4"      
+            - name: WATCH_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: OPERATOR_NAME
+              value: "gitorchestrator"

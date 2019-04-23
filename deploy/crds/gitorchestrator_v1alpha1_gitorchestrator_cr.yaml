@@ -1,0 +1,12 @@
+---
+apiVersion: gitorchestrator.sysrant.com/v1alpha1
+kind: GitOrchestrator
+metadata:
+  name: gitorchestrator
+spec:
+  gitType: "github"
+  organisation: "leave-empty-if-none"
+  repositoryName: "example-repo-k8s"
+  repositoryNamespace: "wiardvanrij"
+  description: "Created from k8s!"
+  visibility: "public"

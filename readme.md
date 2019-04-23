@@ -56,6 +56,11 @@ Even though the operator knows what has been processed, it does not "update" rep
 ## In production
 I assume that if you are going to make use of this, that you have the knowledge of what you are doing and what the state of this operator is. The core of this project works fine, yet it could be more mature.
 
+## Possible ToDo's
+
+* move functionalities from the spec in the resources to the operator (ea; visibility)
+* add more repository options
+
 ## Help out
 So only github & gitlab are implemented. Feel free to make a PR to add others. 
 

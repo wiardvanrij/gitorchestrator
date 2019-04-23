@@ -65,3 +65,8 @@ I assume that if you are going to make use of this, that you have the knowledge 
 So only github & gitlab are implemented. Feel free to make a PR to add others. 
 
 Also feel free to make PR's to make this operator more mature.
+
+## Thanks
+
+Thanks to github.com/xanzy/go-gitlab for the gitlab client
+And github.com/google/go-github/github for github ;) 
